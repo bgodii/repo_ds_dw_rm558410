@@ -23,7 +23,7 @@
 				"folderPath": "bronze",
 				"container": "origemrm558410"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": ";",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
