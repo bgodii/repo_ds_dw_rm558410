@@ -1,0 +1,33 @@
+{
+	"name": "DESTINO",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DESTINO",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"nome_arquivo": {
+				"type": "string",
+				"defaultValue": "arquivo_destino"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().nome_arquivo",
+					"type": "Expression"
+				},
+				"folderPath": "gold",
+				"container": "destino"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
