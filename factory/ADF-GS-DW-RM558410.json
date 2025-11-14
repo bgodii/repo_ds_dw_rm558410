@@ -1,0 +1,9 @@
+{
+	"name": "ADF-GS-DW-RM558410",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bdf64b2c-1990-40f5-915f-448036dc88dd",
+		"tenantId": "11dbbfe2-89b8-4549-be10-cec364e59551"
+	}
+}
