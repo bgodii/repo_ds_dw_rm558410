@@ -16,7 +16,7 @@
 						"referenceName": "ORIGEM",
 						"type": "DatasetReference"
 					},
-					"name": "FuturoCaracteristica"
+					"name": "futuroCaracteristica"
 				}
 			],
 			"sinks": [],
@@ -27,7 +27,7 @@
 				"     ignoreNoFilesFound: false) ~> trabalhoFuturo",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> FuturoCaracteristica"
+				"     ignoreNoFilesFound: false) ~> futuroCaracteristica"
 			]
 		}
 	}
