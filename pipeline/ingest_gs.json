@@ -21,6 +21,12 @@
 						"datasetParameters": {
 							"pesquisa": {
 								"nome_arquivo": "pesquisa_trabalho_futuro.csv"
+							},
+							"source1": {
+								"nome_arquivo": "trabalho_futuro_caracteristicas.csv"
+							},
+							"destino": {
+								"nome_arquivo": "arquivo_destino"
 							}
 						}
 					},

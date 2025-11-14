@@ -7,8 +7,7 @@
 		},
 		"parameters": {
 			"nome_arquivo": {
-				"type": "string",
-				"defaultValue": "bronze_dataset"
+				"type": "string"
 			}
 		},
 		"annotations": [],

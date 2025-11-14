@@ -10,14 +10,60 @@
 						"type": "DatasetReference"
 					},
 					"name": "pesquisa"
+				},
+				{
+					"dataset": {
+						"referenceName": "ORIGEM",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
 				}
 			],
-			"sinks": [],
-			"transformations": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DESTINO",
+						"type": "DatasetReference"
+					},
+					"name": "destino"
+				}
+			],
+			"transformations": [
+				{
+					"name": "join1"
+				}
+			],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          Id_Pesquisa as short,",
+				"          Data_Pesquisa as string,",
+				"          Satisfacao_Atual as short,",
+				"          Equilibrio_Vida_Trabalho as short,",
+				"          Saude_Mental_Status as short",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> pesquisa"
+				"     ignoreNoFilesFound: false) ~> pesquisa",
+				"source(output(",
+				"          Id_Pesquisa as short,",
+				"          Estado as string,",
+				"          Cidade as string,",
+				"          Genero as string,",
+				"          Idade as short,",
+				"          Profissao as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"pesquisa, source1 join(pesquisa@Id_Pesquisa == source1@Id_Pesquisa,",
+				"     joinType:'inner',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> join1",
+				"join1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> destino"
 			]
 		}
 	}
