@@ -5,14 +5,19 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"name": "pesquisa_trabalho_futuro"
+					"dataset": {
+						"referenceName": "ORIGEM",
+						"type": "DatasetReference"
+					},
+					"name": "futuro"
 				}
 			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> pesquisa_trabalho_futuro"
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> futuro"
 			]
 		}
 	}
