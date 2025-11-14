@@ -16,11 +16,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
+				"folderPath": {
 					"value": "@dataset().nome_arquivo",
 					"type": "Expression"
 				},
-				"folderPath": "gold",
 				"container": "destino"
 			},
 			"columnDelimiter": ",",
